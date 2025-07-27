@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guia UFC</title>
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="src/styles/styles.css" />
+        
+        <script src="./src/scripts/utils.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap icon"></i>
+                    <h1>Guia <span>UFC</span></h1>
+                </div>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="/index.html">Início</a></li>
+                        <li><a href="/src/pages/cursos.html">Cursos</a></li>
+                        <li><a href="/src/pages/eventos.html">Eventos</a></li>
+                        <li><a href="/src/pages/duvidas.html">Duvidas</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Bem-vindo ao Guia UFC!</h2>
+                <p>
+                    Sua plataforma completa de apoio para novos estudantes da
+                    Universidade Federal do Ceará. Encontre tudo o que precisa
+                    para uma jornada acadêmica de sucesso.
+                </p>
+                <div class="hero-buttons">
+                    <a href="./src/pages/eventos.html" class="btn"
+                        >Ver eventos</a
+                    >
+                    <a href="./src/pages/cursos.html" class="btn btn-primary"
+                        >Explorar cursoss</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Como Podemos Ajudar</h2>
+                    <p>Tudo que você precisa para começar sua jornada na UFC</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Cursos Detalhados</h3>
+                        <p>
+                            Informações completas sobre todos os cursos
+                            oferecidos pela UFC, com grade curricular, corpo
+                            docente e áreas de atuação.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Bolsas e Auxílios</h3>
+                        <p>
+                            Centralize suas buscas por oportunidades de
+                            financiamento estudantil com informações atualizadas
+                            e alertas.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Perguntas e Respostas</h3>
+                        <p>
+                            Tire suas dúvidas com nossa comunidade ou encontre
+                            respostas em nosso FAQ abrangente.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Eventos Acadêmicos</h3>
+                        <p>
+                            Fique por dentro de todos os eventos, palestras,
+                            workshops e atividades culturais na UFC.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <i
+                                class="fas fa-graduation-cap"
+                                style="
+                                    font-size: 2rem;
+                                    color: var(--secondary);
+                                    margin-right: 10px;
+                                "
+                            ></i>
+                            <h3>Guia <span>UFC</span></h3>
+                        </div>
+                        <p>
+                            Sua plataforma de apoio para novos estudantes da
+                            Universidade Federal do Ceará.
+                        </p>
+                        <div class="social-links">
+                            <a
+                                target="_blank"
+                                href="https://www.facebook.com/ufcrussas/?locale=pt_BR"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a
+                                target="_blank"
+                                href="https://www.instagram.com/ufcrussas"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a target="_blank" href="https://x.com/ufcinforma"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                target="_blank"
+                                href="https://www.youtube.com/UFCCampusdeRussas"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Links Rápidos</h3>
+                        <ul>
+                            <li><a href="/index.html">Início</a></li>
+                            <li><a href="/src/pages/cursos.html">Cursos</a></li>
+                            <li>
+                                <a href="/src/pages/duvidas.html"
+                                    >Perguntas Frequentes</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/src/pages/eventos.html">Eventos</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Recursos Úteis</h3>
+                        <ul>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/calendario-universitario/2025"
+                                    >Calendário Acadêmico</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/noticias"
+                                    >noticias</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://si3.ufc.br/sigaa/verTelaLogin.do"
+                                    >SIGAA</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="http://www.campusrussas.ufc.br/biblioteca.php"
+                                    >Biblioteca Virtual</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/restaurante"
+                                    >Restaurante Universitário</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                russas@ufc.br
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i> (88) 3411 - 9218
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> Avenida
+                                Felipe Santiago, 411, Campo Federal, Russas -
+                                CE, CEP: 62900-420
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Guia UFC - Plataforma de Apoio a Novos
+                        Estudantes.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guia UFC</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="../styles/styles.css" />
+        <script src="../scripts/utils.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap icon"></i>
+                    <h1>Guia <span>UFC</span></h1>
+                </div>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="/index.html">Início</a></li>
+                        <li><a href="/src/pages/cursos.html">Cursos</a></li>
+                        <li><a href="/src/pages/eventos.html">Eventos</a></li>
+                        <li><a href="/src/pages/duvidas.html">Duvidas</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero-events">
+            <div class="hero-content">
+                <h2>Eventos e Atividades</h2>
+                <p>
+                    Fique por dentro de tudo o que acontece na UFC: palestras,
+                    workshops, eventos culturais e esportivos
+                </p>
+                <div class="hero-buttons">
+                    <a href="#eventos" class="btn btn-primary">Ver Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="events" id="eventos">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Próximos Eventos</h2>
+                    <p>
+                        Confira a programação dos próximos eventos acadêmicos e
+                        culturais
+                    </p>
+                </div>
+
+                <div class="events-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        Todos
+                    </button>
+                    <button class="filter-btn academic" data-filter="academic">
+                        Acadêmicos
+                    </button>
+                    <button class="filter-btn cultural" data-filter="cultural">
+                        Culturais
+                    </button>
+                    <button class="filter-btn sports" data-filter="sports">
+                        Esportivos
+                    </button>
+                </div>
+
+                <div class="events-container">
+                    <div class="events-list">
+                        <div class="event-card academic">
+                            <div class="event-date">
+                                <div class="day">15</div>
+                                <div class="month">AGO</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type academic"
+                                    >Evento Acadêmico</span
+                                >
+                                <h3>Sescomp</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-clock"></i> 14:00 -
+                                        18:00
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Auditório do Centro de Tecnologia
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    A SESCOMP (Semana de Engenharia de Software
+                                    e Ciência da Computação) é um evento anual
+                                    promovido pelos cursos de Engenharia de
+                                    Software e Ciência da Computação da
+                                    Universidade Federal do Ceará – Campus
+                                    Russas. Seu objetivo principal é promover a
+                                    troca de experiências entre estudantes,
+                                    professores, profissionais e a comunidade do
+                                    Vale do Jaguaribe, por meio de palestras,
+                                    workshops, debates, oficinas e momentos de
+                                    networking. O evento é gratuito e aberto a
+                                    qualquer pessoa com interesse em tecnologia,
+                                    certificando participantes que cumprem ao
+                                    menos 70% das atividades.
+                                </p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn">Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-card cultural">
+                            <div class="event-date">
+                                <div class="day">18</div>
+                                <div class="month">AGO</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type cultural"
+                                    >Evento Cultural</span
+                                >
+                                <h3>Calourada</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-clock"></i> 22:00 -
+                                        05:00
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Praça da Reitoria
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    A Calourada da UFC é a tradicional festa de
+                                    boas-vindas aos calouros da Universidade
+                                    Federal do Ceará. Realizada no início de
+                                    cada semestre letivo, a celebração combina
+                                    acolhimento, integração e o espírito festivo
+                                    dos cursos, reunindo calouros e veteranos em
+                                    atividades que incluem gincanas, música,
+                                    apresentações culturais e socialização. É
+                                    uma oportunidade para os novos estudantes
+                                    conhecerem o campus, se entrosarem com a
+                                    comunidade acadêmica e iniciarem sua jornada
+                                    com entusiasmo e pertencimento.
+                                </p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn">Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card sports">
+                            <div class="event-date">
+                                <div class="day">22</div>
+                                <div class="month">AGO</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type sports"
+                                    >Evento Esportivo</span
+                                >
+                                <h3>Intercurso</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-clock"></i> 09:00 -
+                                        17:00
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Ginásio Poliesportivo
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    A Intercurso da UFC é uma tradicional
+                                    competição esportiva entre cursos promovida
+                                    pela Universidade Federal do Ceará —
+                                    especialmente no Campus de Russas. O evento
+                                    reúne estudantes de diferentes áreas em
+                                    jogos competitivos e confraternização, com
+                                    modalidades como futsal, vôlei misto,
+                                    basquete, handebol, vôlei de praia, xadrez,
+                                    carimbo e outras .
+                                </p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn">Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card academic">
+                            <div class="event-date">
+                                <div class="day">25</div>
+                                <div class="month">AGO</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type academic"
+                                    >Evento Acadêmico</span
+                                >
+                                <h3>SER</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-clock"></i> 18:30 -
+                                        20:30
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Auditório do Centro de Tecnologia
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    A Semana das Engenharias de Russas (SER) é o
+                                    maior encontro de estudantes, professores e
+                                    profissionais das engenharias da região do
+                                    Vale do Jaguaribe, realizado anualmente pelo
+                                    Campus UFC Russas. A edição de 2025 ocorreu
+                                    de 3 a 6 de fevereiro, reunindo cursos como
+                                    Engenharia Civil, Produção e Mecânica, além
+                                    de áreas correlatas como inovação,
+                                    empreendedorismo e tecnologia
+                                </p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn">Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card cultural">
+                            <div class="event-date">
+                                <div class="day">29</div>
+                                <div class="month">AGO</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type cultural"
+                                    >Evento Cultural</span
+                                >
+                                <h3>ArraiArt</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-clock"></i> 19:00 -
+                                        23:00
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Hall da UFC
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    O Arraiart, também conhecido como "Forró no
+                                    Campus", é a festança junina oficial e
+                                    tradicional do Campus da UFC em Russas.
+                                    Acontece no hall principal da universidade e
+                                    traz uma programação divertida com dança,
+                                    comidas típicas, quadros culturais e muita
+                                    música de forró para animar a comunidade
+                                    acadêmica
+                                </p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn">Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <i
+                                class="fas fa-graduation-cap"
+                                style="
+                                    font-size: 2rem;
+                                    color: var(--secondary);
+                                    margin-right: 10px;
+                                "
+                            ></i>
+                            <h3>Guia <span>UFC</span></h3>
+                        </div>
+                        <p>
+                            Sua plataforma de apoio para novos estudantes da
+                            Universidade Federal do Ceará.
+                        </p>
+                        <div class="social-links">
+                            <a
+                                target="_blank"
+                                href="https://www.facebook.com/ufcrussas/?locale=pt_BR"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a
+                                target="_blank"
+                                href="https://www.instagram.com/ufcrussas"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a target="_blank" href="https://x.com/ufcinforma"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                target="_blank"
+                                href="https://www.youtube.com/UFCCampusdeRussas"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Links Rápidos</h3>
+                        <ul>
+                            <li><a href="/index.html">Início</a></li>
+                            <li><a href="/src/pages/cursos.html">Cursos</a></li>
+                            <li>
+                                <a href="/src/pages/duvidas.html"
+                                    >Perguntas Frequentes</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/src/pages/eventos.html">Eventos</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Recursos Úteis</h3>
+                        <ul>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/calendario-universitario/2025"
+                                    >Calendário Acadêmico</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/noticias"
+                                    >noticias</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://si3.ufc.br/sigaa/verTelaLogin.do"
+                                    >SIGAA</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="http://www.campusrussas.ufc.br/biblioteca.php"
+                                    >Biblioteca Virtual</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    target="_blank"
+                                    href="https://www.ufc.br/restaurante"
+                                    >Restaurante Universitário</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                russas@ufc.br
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i> (88) 3411 - 9218
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> Avenida
+                                Felipe Santiago, 411, Campo Federal, Russas -
+                                CE, CEP: 62900-420
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Guia UFC - Plataforma de Apoio a Novos
+                        Estudantes.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
