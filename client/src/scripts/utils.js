@@ -49,9 +49,11 @@ const courseTabs = () => {
     }
 };
 
-const eventFilters = () => {
+export const eventFilters = () => {
     const filterBtns = document.querySelectorAll('.events-filters .filter-btn');
     const eventCards = document.querySelectorAll('.event-card');
+
+    console.log(eventCards);
 
     if (filterBtns.length > 0 && eventCards.length > 0) {
         filterBtns.forEach((btn) => {

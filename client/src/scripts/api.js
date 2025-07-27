@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { eventFilters } from './utils';
 
 const URL_API = 'http://localhost:3000';
 
@@ -17,18 +18,17 @@ const QuestionService = {
     deleteQuestion: (id) => axios.delete(`${URL_API}/questions/${id}`),
     createAnswer: (questionId, data) =>
         axios.post(`${URL_API}/questions/${questionId}/answers`, data),
-    likeAnswer: (answerId) => axios.post(`${URL_API}/answers/${answerId}/like`),
 };
 
 async function getAllQuestions() {
     try {
         const response = await QuestionService.getAllQuestions();
         const questionsData = response.data;
-        const questionsContainer =
-            document.getElementById('questionsContainer');
-        if (!questionsContainer)
-            throw new Error('Container de perguntas não encontrado');
-
+        const questionsContainer = document.getElementById('questions');
+        if (!questionsContainer) {
+            console.warn('Elemento questionsContainer não encontrado no DOM.');
+            return;
+        }
         questionsContainer.innerHTML = '';
 
         questionsData.forEach((question) => {
@@ -143,19 +143,103 @@ export function setupEventForm() {
             type: document.getElementById('event-type')?.value,
             date: eventDateInput?.value,
             description: document.getElementById('event-description')?.value,
+            links: document.getElementById('event-links')?.value,
         };
         try {
             await EventService.createEvent(formData);
-            alert('Evento criado com sucesso!');
             eventForm.reset();
         } catch (error) {
             console.error('Erro ao criar evento:', error);
-            alert('Erro ao criar evento');
         }
     });
+}
+
+async function getAllEvents() {
+    try {
+        const response = await EventService.getAllEvents();
+        const eventsData = response.data;
+
+        const eventsContainer = document.getElementById('events');
+        if (!eventsContainer) {
+            console.warn('Container de eventos não encontrado');
+            return;
+        }
+
+        eventsContainer.innerHTML = '';
+
+        eventsData.forEach((event) => {
+            const eventElement = document.createElement('div');
+            eventElement.classList.add('event-card');
+
+            let typeEvent;
+
+            switch (event.category) {
+                case 'academico':
+                    typeEvent = 'academic';
+                    break;
+                case 'cultural':
+                    typeEvent = 'cultural';
+                    break;
+                case 'esportivo':
+                    typeEvent = 'sports';
+                    break;
+            }
+
+            eventElement.classList.add(typeEvent);
+
+            const date = new Date(event.date);
+            const monthNames = [
+                'JAN',
+                'FEV',
+                'MAR',
+                'ABR',
+                'MAI',
+                'JUN',
+                'JUL',
+                'AGO',
+                'SET',
+                'OUT',
+                'NOV',
+                'DEZ',
+            ];
+            const month = monthNames[date.getMonth()];
+
+            eventElement.innerHTML = `
+                            <div class="event-date">
+                                <div class="day">${date.getDate()}</div>
+                                <div class="month">${month}</div>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type ${typeEvent}"
+                                    >Evento ${event.category}</span
+                                >
+                                <h3>${event.title}</h3>
+                                <div class="event-meta">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        ${event.location}
+                                    </div>
+                                </div>
+                                <p class="event-description">
+                                    ${event.description}
+                                </p>
+                                <div class="event-actions">
+                                    <a target="_blank" href="${
+                                        event.links
+                                    }" class="btn">Detalhes</a>
+                                </div>
+                            </div>`;
+
+            eventsContainer.appendChild(eventElement);
+        });
+        eventFilters();
+    } catch (error) {
+        console.error('Erro ao carregar eventos:', error);
+    }
 }
 
 export const api = () => {
     getAllQuestions();
     questionForms();
+    getAllEvents();
 };
