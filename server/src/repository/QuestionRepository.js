@@ -5,7 +5,7 @@ dotenv.config();
 
 const pool = new Pool({
     host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
+    port: Number(process.env.DB_PORT),
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -14,7 +14,7 @@ const pool = new Pool({
 class QuestionRepository {
     async getAllQuestions() {
         const result = await pool.query(
-            'SELECT * FROM questions ORDER BY created_at DESC'
+            'SELECT * FROM questions ORDER BY id DESC'
         );
         return result.rows;
     }
@@ -27,19 +27,27 @@ class QuestionRepository {
         return result.rows[0];
     }
 
-    async createQuestion(question) {
-        const { title, content, user_id } = question;
-        const result = await pool.query(
-            'INSERT INTO questions (title, content, user_id) VALUES ($1, $2, $3) RETURNING *',
-            [title, content, user_id]
-        );
-        return result.rows[0];
+    async createQuestion({ title, content }) {
+        try {
+            const result = await pool.query(
+                `INSERT INTO questions (title, content)
+         VALUES ($1, $2)
+         RETURNING *`,
+                [title, content]
+            );
+            return result.rows[0];
+        } catch (error) {
+            throw error;
+        }
     }
 
-    async updateQuestion(id, question) {
-        const { title, content } = question;
+    async updateQuestion(id, { title, content }) {
         const result = await pool.query(
-            'UPDATE questions SET title = $1, content = $2 WHERE id = $3 RETURNING *',
+            `UPDATE questions
+         SET title   = $1,
+             content = $2
+       WHERE id = $3
+       RETURNING *`,
             [title, content, id]
         );
         return result.rows[0];
@@ -51,19 +59,24 @@ class QuestionRepository {
 
     async getAnswersByQuestionId(questionId) {
         const result = await pool.query(
-            'SELECT * FROM answers WHERE question_id = $1 ORDER BY created_at ASC',
+            'SELECT * FROM answers WHERE question_id = $1 ORDER BY id ASC',
             [questionId]
         );
         return result.rows;
     }
 
-    async createAnswer(answer) {
-        const { content, user_id, question_id } = answer;
-        const result = await pool.query(
-            'INSERT INTO answers (content, user_id, question_id) VALUES ($1, $2, $3) RETURNING *',
-            [content, user_id, question_id]
-        );
-        return result.rows[0];
+    async createAnswer({ content, questionId }) {
+        try {
+            const result = await pool.query(
+                `INSERT INTO answers (content, question_id)
+         VALUES ($1, $2)
+         RETURNING *`,
+                [content, questionId]
+            );
+            return result.rows[0];
+        } catch (error) {
+            throw error;
+        }
     }
 }
 
